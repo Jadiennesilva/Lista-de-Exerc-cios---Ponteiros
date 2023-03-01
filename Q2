@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+
+int main() {
+    char string_original[50];
+	char string_copia[50];
+	char *PONT_ORG, *PONT_COPIA;
+	
+	setlocale(LC_ALL, "Portuguese_Brazil");
+
+    printf("Qual nome da string vc deseja: ");
+    fgets(string_original, 50, stdin);
+
+  PONT_ORG = string_original;
+  PONT_COPIA = string_copia;
+
+   while (*PONT_ORG != '\00') {
+       if (*PONT_ORG == 'a'
+	    || *PONT_ORG == 'e'
+		|| *PONT_ORG == 'i' 
+	 	|| *PONT_ORG == 'o' 
+	    || *PONT_ORG == 'u'){
+      
+    } 
+		
+	else{
+        *PONT_COPIA = *PONT_ORG;
+         PONT_COPIA++;
+         
+        }
+        
+      PONT_ORG++;
+    }
+
+    printf("original: \n %s", string_original);
+    printf("sem vogais: \n %s", string_copia);
+
+    system("pause");
+    return 0;
+}
