@@ -8,9 +8,11 @@ int main() {
 
    	setlocale(LC_ALL, "Portuguese_Brazil");
    	
+   	//ptr "ponteiro", o endereço da variavel e armazenada no ponteiro.
     printf("Digite um número real: ");
     scanf("%f", &numero);
 
+  
     ptr = &numero;
 
     printf("O valor original é: %f\n", *ptr);
