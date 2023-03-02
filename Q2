@@ -3,26 +3,43 @@
 #include <locale.h>
 #include <string.h>
 
-int main() {
+int main(){
+	
+	// As duas variaveis de entrada foram definidas.
+	
+	// Armazena a variavel original, a entrada e 50 caracteres.
     char string_original[50];
+   
+    //Armazena a nova variavel sem vogais.
 	char string_copia[50];
+
+    //Definir as duas variaveis de ponteiros, sabendo que essas variaveis de ponteiros serão para percorre as strigs.	
 	char *PONT_ORG, *PONT_COPIA;
 	
 	setlocale(LC_ALL, "Portuguese_Brazil");
 
+   //Solicitei que p usuario digite a strings que deseja. 
     printf("Qual nome da string vc deseja: ");
+    
+    
+  //fgets será usado para ler uma linha de entrada da stdin e armazena em  string_original. 
     fgets(string_original, 50, stdin);
-
+    
+  //os ponteiros serão iniciados
   PONT_ORG = string_original;
   PONT_COPIA = string_copia;
+  
+  //será iniciado o PONT_ORG com o endereço da primeira posição da strings original e da pont copia e será iniciado como o endereço da primeira posição da string copia.   
 
+  //o programa percorre a string original e caractere por caractere e remove todas as vogais.
    while (*PONT_ORG != '\00') {
        if (*PONT_ORG == 'a'
 	    || *PONT_ORG == 'e'
 		|| *PONT_ORG == 'i' 
-	 	|| *PONT_ORG == 'o' 
+	    || *PONT_ORG == 'o' 
 	    || *PONT_ORG == 'u'){
-      
+		
+		 
     } 
 		
 	else{
@@ -30,9 +47,10 @@ int main() {
          PONT_COPIA++;
          
         }
-        
       PONT_ORG++;
     }
+    
+    //O loop continua continua, quando for o caractere nulo ele parar. ele verificar se o caractere atual é uma vogão, se for uma vogão ele não faz mais nada.
 
     printf("original: \n %s", string_original);
     printf("sem vogais: \n %s", string_copia);
