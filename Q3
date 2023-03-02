@@ -1,0 +1,38 @@
+
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+
+int main(){
+    int VARIAVEL_1, VARIAVEL_2;
+    int *PONTEIRO_1, *PONTEIRO_2;
+
+   PONTEIRO_1 = &VARIAVEL_1;
+   PONTEIRO_2 = &VARIAVEL_2;
+
+   	setlocale(LC_ALL, "Portuguese_Brazil");
+   	
+    printf("digite o primeiro valor: ");
+    scanf("%d", PONTEIRO_1);
+    
+    printf("Digite o segunda valor: ");
+    scanf("%d", PONTEIRO_2);
+  
+    *PONTEIRO_1 = *PONTEIRO_1 + *PONTEIRO_2;
+    *PONTEIRO_2 = *PONTEIRO_1 - *PONTEIRO_2;
+    *PONTEIRO_1 = *PONTEIRO_1 - *PONTEIRO_2;
+
+    printf("Os valores depois da atualização :\n");
+    
+ if(VARIAVEL_1 > VARIAVEL_2) {
+        printf("%d\n", VARIAVEL_1);
+        printf("%d\n", VARIAVEL_2);
+    }
+	else{
+        printf("%d\n", VARIAVEL_2);
+        printf("%d\n", VARIAVEL_1);
+    }
+
+    system("pause");
+    return 0;
+}
